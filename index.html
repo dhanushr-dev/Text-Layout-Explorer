@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Typography &amp; Layout Explorer</title>
+  <meta name="description" content="A complete educational reference for CSS Typography and Layout properties — built with pure HTML5 and CSS3." />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       STICKY HEADER  +  NAVIGATION
+       ============================================================ -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">Aa</span>
+        <span class="brand-text">
+          <strong>CSS Typography &amp; Layout</strong>
+          <small>Explorer</small>
+        </span>
+      </a>
+
+      <!-- Responsive navigation (checkbox hack for mobile menu) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#intro">Intro</a>
+        <a href="#typography">Typography</a>
+        <a href="#lists">Lists</a>
+        <a href="#tables">Tables</a>
+        <a href="#display">Display</a>
+        <a href="#position">Position</a>
+        <a href="#float">Float</a>
+        <a href="#visibility">Visibility</a>
+        <a href="#cursor">Cursor</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       LAYOUT SHELL: STICKY SIDEBAR  +  MAIN CONTENT
+       ============================================================ -->
+  <div class="layout">
+
+    <!-- ---------- STICKY SIDEBAR (Table of Contents) ---------- -->
+    <aside class="sidebar" aria-label="Table of contents">
+      <h2 class="sidebar-title">Contents</h2>
+      <nav class="toc" aria-label="Section navigation">
+        <ol>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#typography">1. Typography</a>
+            <ul>
+              <li><a href="#font-family">font-family</a></li>
+              <li><a href="#font-size">font-size</a></li>
+              <li><a href="#font-style">font-style</a></li>
+              <li><a href="#font-weight">font-weight</a></li>
+              <li><a href="#font-variant">font-variant</a></li>
+              <li><a href="#font-stretch">font-stretch</a></li>
+              <li><a href="#line-height">line-height</a></li>
+              <li><a href="#letter-spacing">letter-spacing</a></li>
+              <li><a href="#word-spacing">word-spacing</a></li>
+              <li><a href="#text-align">text-align</a></li>
+              <li><a href="#text-decoration">text-decoration</a></li>
+              <li><a href="#text-transform">text-transform</a></li>
+              <li><a href="#text-indent">text-indent</a></li>
+              <li><a href="#text-shadow">text-shadow</a></li>
+              <li><a href="#text-overflow">text-overflow</a></li>
+              <li><a href="#white-space">white-space</a></li>
+              <li><a href="#word-break">word-break</a></li>
+              <li><a href="#overflow-wrap">overflow-wrap</a></li>
+              <li><a href="#vertical-align">vertical-align</a></li>
+              <li><a href="#direction">direction</a></li>
+              <li><a href="#unicode-bidi">unicode-bidi</a></li>
+            </ul>
+          </li>
+          <li><a href="#lists">2. Lists</a></li>
+          <li><a href="#tables">3. Tables</a></li>
+          <li><a href="#display">4. Display</a></li>
+          <li><a href="#position">5. Position</a></li>
+          <li><a href="#float">6. Float</a></li>
+          <li><a href="#visibility">7. Visibility</a></li>
+          <li><a href="#cursor">8. Cursor</a></li>
+        </ol>
+      </nav>
+    </aside>
+
+    <!-- ---------- MAIN CONTENT ---------- -->
+    <main class="content">
+
+      <!-- ============ HERO ============ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <p class="hero-eyebrow">Pure HTML5 &amp; CSS3 · No frameworks</p>
+          <h1 id="hero-title">CSS Typography &amp; Layout Explorer</h1>
+          <p class="hero-subtitle">
+            A hands-on reference that explains <em>how every typography and layout
+            property works</em> — with definitions, syntax, live demos and copy-ready code.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#typography">Start learning</a>
+            <a class="btn btn-ghost" href="#toc-page">Table of contents</a>
+          </div>
+          <div class="hero-stats" aria-hidden="true">
+            <div><strong>8</strong><span>Sections</span></div>
+            <div><strong>50+</strong><span>Properties</span></div>
+            <div><strong>100%</strong><span>CSS only</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ INTRODUCTION ============ -->
+      <section id="intro" class="page-section" aria-labelledby="intro-title">
+        <header class="section-head">
+          <h2 id="intro-title">Introduction</h2>
+          <p class="section-kicker">Why this guide exists</p>
+        </header>
+
+        <div class="intro-grid">
+          <article class="intro-card">
+            <h3>What is this?</h3>
+            <p>
+              An interactive documentation site that teaches the CSS properties
+              responsible for <strong>typography</strong> (how text looks) and
+              <strong>layout</strong> (how boxes are placed). Every concept is paired
+              with a live demo and the exact code that produced it.
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <h3>Why typography matters</h3>
+            <p>
+              Text is the most common element on the web. The right
+              <code>font-size</code>, <code>line-height</code> and spacing can make a
+              page feel calm and readable — or cramped and exhausting. Good typography
+              builds trust, improves comprehension and reinforces brand identity.
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <h3>Why layout matters</h3>
+            <p>
+              Layout properties (<code>display</code>, <code>position</code>,
+              <code>float</code>, <code>z-index</code>) decide where boxes go and how
+              they react to each other. Mastering them is the difference between a
+              fragile page and a responsive, robust one.
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <h3>Who is it for?</h3>
+            <p>
+              Beginners learning CSS for the first time, and intermediate developers
+              who want a quick visual refresher. No JavaScript, no build step — open
+              <code>index.html</code> and read.
+            </p>
+          </article>
+        </div>
+
+        <!-- Learning objectives -->
+        <div class="objectives">
+          <h3>Learning objectives</h3>
+          <p>By the end of this guide you will be able to:</p>
+          <ul class="check-list">
+            <li>Choose the correct <code>font-*</code> property for any text effect.</li>
+            <li>Control spacing, alignment and wrapping of paragraphs.</li>
+            <li>Style lists, tables and decorative content confidently.</li>
+            <li>Predict how <code>display</code>, <code>position</code> and <code>float</code> change the box model.</li>
+            <li>Decide between <code>visibility:hidden</code>, <code>opacity:0</code> and <code>display:none</code>.</li>
+            <li>Apply the right cursor and accessibility cues for interactive elements.</li>
+          </ul>
+        </div>
+
+        <!-- On-page Table of Contents -->
+        <div id="toc-page" class="toc-page">
+          <h3>Table of contents</h3>
+          <ol class="toc-grid">
+            <li><a href="#typography">1 · Typography</a><small>21 properties</small></li>
+            <li><a href="#lists">2 · Lists</a><small>markers &amp; position</small></li>
+            <li><a href="#tables">3 · Tables</a><small>borders &amp; layout</small></li>
+            <li><a href="#display">4 · Display</a><small>block · inline · none</small></li>
+            <li><a href="#position">5 · Position</a><small>static → sticky</small></li>
+            <li><a href="#float">6 · Float</a><small>float &amp; clear</small></li>
+            <li><a href="#visibility">7 · Visibility</a><small>visible · hidden · opacity</small></li>
+            <li><a href="#cursor">8 · Cursor</a><small>11 common cursors</small></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ END INTRO  (sections continue below) ============ -->
+
+      <!-- ============================================================
+           SECTION 1 — TYPOGRAPHY
+           ============================================================ -->
+      <section id="typography" class="page-section" aria-labelledby="typography-title">
+        <header class="section-head">
+          <h2 id="typography-title">1 · Typography</h2>
+          <p class="section-kicker">How text looks: faces, size, weight, spacing &amp; decoration</p>
+        </header>
+
+        <!-- ---------- font-family ---------- -->
+        <article class="card" id="font-family">
+          <header class="card-head">
+            <span class="card-tag">typography</span>
+            <h3>font-family</h3>
+          </header>
+          <p class="card-def"><strong>Definition.</strong> Sets the typeface (font) used for an element's text. A fallback list lets the browser pick the first available font.</p>
+          <div class="card-block">
+            <h4>Syntax</h4>
+            <pre class="code"><code>selector {
+  font-family: "Primary Font", "Fallback Font", generic-family;
+}</code></pre>
+          </div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li><code>serif</code> — fonts with finishing strokes (Times, Georgia)</li>
+              <li><code>sans-serif</code> — clean, stroke-less fonts (Arial, Helvetica)</li>
+              <li><code>monospace</code> — equal-width characters (Consolas, Courier)</li>
+              <li><code>cursive</code> / <code>fantasy</code> — decorative families</li>
+              <li>Any named font family, in quotes if it has spaces</li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ff-serif">The quick brown fox</p><figcaption>serif</figcaption></figure>
+              <figure class="demo"><p class="ff-sans">The quick brown fox</p><figcaption>sans-serif</figcaption></figure>
+              <figure class="demo"><p class="ff-mono">The quick brown fox</p><figcaption>monospace</figcaption></figure>
+              <figure class="demo"><p class="ff-cursive">The quick brown fox</p><figcaption>cursive</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="serif"&gt;The quick brown fox&lt;/p&gt;
+&lt;p class="mono"&gt;The quick brown fox&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.serif { font-family: Georgia, "Times New Roman", serif; }
+.mono  { font-family: Consolas, monospace; }</code></pre></div>
+          </div>
+          <div class="card-block">
+            <h4>Rendered output</h4>
+            <div class="render"><p class="ff-serif">The quick brown fox jumps over the lazy dog.</p><p class="ff-mono">The quick brown fox jumps over the lazy dog.</p></div>
+          </div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Always end the list with a generic family so the page still works if no named font is installed.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>The browser uses the first matching font <em>per glyph</em>, so mixed scripts can render in different faces.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Body text, headings, code blocks, branding through a custom web font.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- font-size ---------- -->
+        <article class="card" id="font-size">
+          <header class="card-head"><span class="card-tag">typography</span><h3>font-size</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Controls the height of the text characters.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { font-size: &lt;length&gt; | &lt;percentage&gt; | &lt;keyword&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li><code>px</code> — absolute pixels (<code>16px</code>)</li>
+              <li><code>em</code> / <code>rem</code> — relative to parent / root font size</li>
+              <li><code>%</code> — relative to the inherited size</li>
+              <li>Keywords: <code>xx-small</code> … <code>xx-large</code>, <code>smaller</code>, <code>larger</code></li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="fs-xs">Aa</p><figcaption>12px · xs</figcaption></figure>
+              <figure class="demo"><p class="fs-md">Aa</p><figcaption>18px · md</figcaption></figure>
+              <figure class="demo"><p class="fs-lg">Aa</p><figcaption>28px · lg</figcaption></figure>
+              <figure class="demo"><p class="fs-xl">Aa</p><figcaption>44px · xl</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="xs"&gt;Aa&lt;/p&gt;
+&lt;p class="xl"&gt;Aa&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.xs { font-size: 12px; }
+.xl { font-size: 44px; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="fs-xs">Small text sample</p><p class="fs-xl">Large text sample</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Prefer <code>rem</code> for body text so it respects the user's browser font-size setting.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Default browser size is <code>16px</code> = <code>1rem</code>.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Headings hierarchy, readable body copy, responsive scaling.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- font-style ---------- -->
+        <article class="card" id="font-style">
+          <header class="card-head"><span class="card-tag">typography</span><h3>font-style</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Selects whether text is normal, italic or oblique (slanted).</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { font-style: normal | italic | oblique; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code></li><li><code>italic</code> — uses the italic face</li><li><code>oblique</code> — artificially slants normal face</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="fst-normal">Style</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="fst-italic">Style</p><figcaption>italic</figcaption></figure>
+              <figure class="demo"><p class="fst-oblique">Style</p><figcaption>oblique</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;em&gt;italic by default&lt;/em&gt;
+&lt;i class="oblique"&gt;oblique&lt;/i&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.oblique { font-style: oblique; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="fst-normal">Normal paragraph text.</p><p class="fst-italic">Italic paragraph text.</p><p class="fst-oblique">Oblique paragraph text.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Use <code>&lt;em&gt;</code> for emphasis (semantic), <code>&lt;i&gt;</code> for purely visual italics.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>If no italic face exists, browsers synthesise one from the normal face.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Emphasis, captions, book titles, pull-quotes.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- font-weight ---------- -->
+        <article class="card" id="font-weight">
+          <header class="card-head"><span class="card-tag">typography</span><h3>font-weight</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets how bold or light the text appears, from <code>100</code> (thin) to <code>900</code> (black).</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { font-weight: normal | bold | 100..900; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li>Keywords: <code>normal</code> (400), <code>bold</code> (700)</li><li><code>lighter</code> / <code>bolder</code> — relative to inherited</li><li>Numeric: <code>100 200 300 400 500 600 700 800 900</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="fw-100">Aa</p><figcaption>100</figcaption></figure>
+              <figure class="demo"><p class="fw-300">Aa</p><figcaption>300</figcaption></figure>
+              <figure class="demo"><p class="fw-400">Aa</p><figcaption>400</figcaption></figure>
+              <figure class="demo"><p class="fw-500">Aa</p><figcaption>500</figcaption></figure>
+              <figure class="demo"><p class="fw-700">Aa</p><figcaption>700</figcaption></figure>
+              <figure class="demo"><p class="fw-900">Aa</p><figcaption>900</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="thin"&gt;Light&lt;/p&gt;
+&lt;p class="black"&gt;Heavy&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.thin  { font-weight: 100; }
+.black { font-weight: 900; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="fw-100">Thin (100) text sample.</p><p class="fw-700">Bold (700) text sample.</p><p class="fw-900">Black (900) text sample.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Intermediate weights (100–900) only work if the font file actually ships them.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>System fonts like Arial often only have 400 and 700.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Headings, emphasis, buttons, hierarchy without changing size.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- font-variant ---------- -->
+        <article class="card" id="font-variant">
+          <header class="card-head"><span class="card-tag">typography</span><h3>font-variant</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Switches special typographic features such as small-caps on or off.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { font-variant: normal | small-caps; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code></li><li><code>small-caps</code> — lowercase shown as smaller capitals</li><li><code>all-small-caps</code> — also shrinks capitals (CSS3)</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="fv-normal">The Small Caps</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="fv-smallcaps">The Small Caps</p><figcaption>small-caps</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="smc"&gt;The Small Caps&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.smc { font-variant: small-caps; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="fv-normal">The quick brown fox</p><p class="fv-smallcaps">The quick brown fox</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Modern CSS3 also offers <code>font-variant-numeric</code> for tabular numbers.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>If the font has no small-caps face, browsers synthesise it.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Acronyms, labels, elegant headings.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- font-stretch ---------- -->
+        <article class="card" id="font-stretch">
+          <header class="card-head"><span class="card-tag">typography</span><h3>font-stretch</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Selects a normal, condensed or expanded face of a font family.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { font-stretch: ultra-condensed | condensed | normal | expanded | ultra-expanded; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>condensed</code> · <code>semi-condensed</code> · <code>normal</code></li><li><code>semi-expanded</code> · <code>expanded</code></li><li><code>ultra-condensed</code> · <code>ultra-expanded</code></li><li>Percentages e.g. <code>50%</code>–<code>200%</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="fstr-condensed">Wide</p><figcaption>condensed</figcaption></figure>
+              <figure class="demo"><p class="fstr-normal">Wide</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="fstr-expanded">Wide</p><figcaption>expanded</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="wide"&gt;Wide&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.wide { font-stretch: expanded; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="fstr-condensed">Condensed text sample.</p><p class="fstr-normal">Normal text sample.</p><p class="fstr-expanded">Expanded text sample.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Only affects fonts that actually ship condensed/expanded faces.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Falls back to <code>normal</code> when the requested face is unavailable.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Fitting text into narrow columns, display headlines.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- line-height ---------- -->
+        <article class="card" id="line-height">
+          <header class="card-head"><span class="card-tag">typography</span><h3>line-height</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets the vertical space between lines of text (leading).</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { line-height: normal | &lt;number&gt; | &lt;length&gt; | &lt;percentage&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code> ≈ 1.2</li><li>Unitless number (recommended): <code>1.5</code></li><li><code>px</code>, <code>em</code>, <code>%</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="lh-sm">Small line<br>Small line</p><figcaption>0.9 · small</figcaption></figure>
+              <figure class="demo"><p class="lh-md">Medium line<br>Medium line</p><figcaption>1.5 · medium</figcaption></figure>
+              <figure class="demo"><p class="lh-lg">Large line<br>Large line</p><figcaption>2.2 · large</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="read"&gt;Two lines of&lt;br&gt;text here.&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.read { line-height: 1.5; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="lh-sm">Line one of the paragraph.<br>Line two of the paragraph.</p><p class="lh-lg">Line one of the paragraph.<br>Line two of the paragraph.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Use a unitless value so descendants inherit the multiplier, not a fixed size.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p><code>1.4–1.6</code> is the readability sweet spot for body text.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Body paragraphs (larger), buttons &amp; nav (tighter).</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- letter-spacing ---------- -->
+        <article class="card" id="letter-spacing">
+          <header class="card-head"><span class="card-tag">typography</span><h3>letter-spacing</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Increases or decreases the space between characters (tracking).</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { letter-spacing: normal | &lt;length&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code></li><li>Positive length (<code>2px</code>) widens</li><li>Negative length (<code>-1px</code>) tightens</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ls-normal">TRACK</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="ls-wide">TRACK</p><figcaption>wide · 4px</figcaption></figure>
+              <figure class="demo"><p class="ls-xwide">TRACK</p><figcaption>extra wide · 10px</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="spread"&gt;TRACK&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.spread { letter-spacing: 4px; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="ls-normal">Spacing demo text.</p><p class="ls-xwide">Spacing demo text.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Wide tracking looks elegant on uppercase labels &amp; headings.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>The last letter also gets trailing space — account for it in tight layouts.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Eyebrow labels, logos, all-caps headings.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- word-spacing ---------- -->
+        <article class="card" id="word-spacing">
+          <header class="card-head"><span class="card-tag">typography</span><h3>word-spacing</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets the spacing between words, added on top of the normal space.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { word-spacing: normal | &lt;length&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code></li><li>Positive length widens gaps</li><li>Negative length shrinks gaps</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ws-normal">words apart</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="ws-wide">words apart</p><figcaption>wide</figcaption></figure>
+              <figure class="demo"><p class="ws-xwide">words apart</p><figcaption>extra wide</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="gappy"&gt;words apart&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.gappy { word-spacing: 12px; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="ws-normal">A few words placed apart here.</p><p class="ws-xwide">A few words placed apart here.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Often combined with <code>text-align: justify</code> for even ragged edges.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Word boundaries follow language-specific rules.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Justified text, artistic headlines, justified book layouts.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- text-align ---------- -->
+        <article class="card" id="text-align">
+          <header class="card-head"><span class="card-tag">typography</span><h3>text-align</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets the horizontal alignment of inline content within a block.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { text-align: left | right | center | justify; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>left</code> · <code>right</code> · <code>center</code></li><li><code>justify</code> — stretches lines to full width</li><li><code>start</code> / <code>end</code> — logical, follow <code>direction</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ta-left">Aligned text</p><figcaption>left</figcaption></figure>
+              <figure class="demo"><p class="ta-center">Aligned text</p><figcaption>center</figcaption></figure>
+              <figure class="demo"><p class="ta-right">Aligned text</p><figcaption>right</figcaption></figure>
+              <figure class="demo"><p class="ta-justify">Aligned text wraps to fill</p><figcaption>justify</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="c"&gt;Centered&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.c { text-align: center; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="ta-left">This paragraph is aligned to the left edge of its container.</p><p class="ta-center">This paragraph is centered within its container.</p><p class="ta-right">This paragraph hugs the right edge of its container.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>For RTL languages use <code>start</code>/<code>end</code> instead of <code>left</code>/<code>right</code>.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p><code>justify</code> can create "rivers" of whitespace — pair with hyphenation.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Centering titles, right-aligning numbers in tables, justified articles.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- text-decoration ---------- -->
+        <article class="card" id="text-decoration">
+          <header class="card-head"><span class="card-tag">typography</span><h3>text-decoration</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Draws lines on text — underline, overline or strike-through — and can style them.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { text-decoration: &lt;line&gt; &lt;style&gt; &lt;color&gt; | none; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li>Line: <code>underline</code> · <code>overline</code> · <code>line-through</code> · <code>none</code></li><li>Style: <code>solid</code> · <code>dotted</code> · <code>dashed</code> · <code>wavy</code></li><li>Color: any CSS color</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="td-under">Underline</p><figcaption>underline</figcaption></figure>
+              <figure class="demo"><p class="td-over">Overline</p><figcaption>overline</figcaption></figure>
+              <figure class="demo"><p class="td-strike">Strike</p><figcaption>line-through</figcaption></figure>
+              <figure class="demo"><p class="td-wavy">Wavy</p><figcaption>wavy red</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;a class="plain"&gt;no underline&lt;/a&gt;
+&lt;span class="err"&gt;wavy&lt;/span&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.plain { text-decoration: none; }
+.err   { text-decoration: underline wavy red; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="td-under">Text with an underline.</p><p class="td-strike">Text with a strike-through.</p><p class="td-wavy">Text with a wavy red underline.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Remove default underlines on links with <code>text-decoration: none</code>, but keep another cue for accessibility.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Multiple lines can be combined: <code>underline overline</code>.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Links, errors (wavy), deleted prices (line-through).</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- text-transform ---------- -->
+        <article class="card" id="text-transform">
+          <header class="card-head"><span class="card-tag">typography</span><h3>text-transform</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Changes the capitalisation of text without altering the source HTML.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { text-transform: none | capitalize | uppercase | lowercase; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>none</code></li><li><code>capitalize</code> — first letter of each word</li><li><code>uppercase</code> / <code>lowercase</code></li><li><code>full-width</code> — fixed-width square glyphs</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="tt-none">hello world</p><figcaption>none</figcaption></figure>
+              <figure class="demo"><p class="tt-cap">hello world</p><figcaption>capitalize</figcaption></figure>
+              <figure class="demo"><p class="tt-up">hello world</p><figcaption>uppercase</figcaption></figure>
+              <figure class="demo"><p class="tt-low">HELLO WORLD</p><figcaption>lowercase</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="up"&gt;hello world&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.up { text-transform: uppercase; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="tt-none">hello world (unchanged)</p><p class="tt-up">hello world (uppercased)</p><p class="tt-cap">hello world (capitalized)</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Great for consistent labels &amp; badges without retyping content.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Language-specific rules (e.g. Turkish dotted-i) are respected.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Buttons, tags, section eyebrows, displaying user input uniformly.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- text-indent ---------- -->
+        <article class="card" id="text-indent">
+          <header class="card-head"><span class="card-tag">typography</span><h3>text-indent</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Indents the first line of a block of text.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { text-indent: &lt;length&gt; | &lt;percentage&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li>Length: <code>2em</code>, <code>20px</code></li><li>Percentage of containing block width</li><li>Negative value for "outdent" (hanging indent)</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ti-none">First line of an indented paragraph demo.</p><figcaption>none</figcaption></figure>
+              <figure class="demo"><p class="ti-indent">First line of an indented paragraph demo.</p><figcaption>2em</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="indent"&gt;First line…&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.indent { text-indent: 2em; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="ti-indent">The first line of this paragraph is pushed in by two em units, while the wrapped lines return to the normal left edge.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>A negative <code>text-indent</code> plus padding makes a hanging indent (bibliographies).</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Only affects the <em>first</em> formatted line, not every line.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Book-style paragraphs, bibliographies, pull-quote styling.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- text-shadow ---------- -->
+        <article class="card" id="text-shadow">
+          <header class="card-head"><span class="card-tag">typography</span><h3>text-shadow</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Adds one or more shadows behind the text glyphs.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { text-shadow: &lt;offset-x&gt; &lt;offset-y&gt; &lt;blur&gt; &lt;color&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li>Two offsets (required): <code>2px 2px</code></li><li>Optional blur radius</li><li>Optional color (last)</li><li>Multiple shadows comma-separated</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="tsh-none">Shadow</p><figcaption>none</figcaption></figure>
+              <figure class="demo"><p class="tsh-soft">Shadow</p><figcaption>soft</figcaption></figure>
+              <figure class="demo"><p class="tsh-hard">Shadow</p><figcaption>hard</figcaption></figure>
+              <figure class="demo"><p class="tsh-glow">Shadow</p><figcaption>glow</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;h1 class="glow"&gt;Shadow&lt;/h1&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.glow { text-shadow: 0 0 10px rgba(99,179,237,.8); }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="tsh-none">Text without a shadow.</p><p class="tsh-soft">Text with a soft shadow.</p><p class="tsh-glow">Text with a glowing shadow.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Use <code>text-shadow</code> to keep text legible over busy background images.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Shadows never affect layout — they can overflow the box.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Hero headlines, neon/glow effects, depth on buttons.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- text-overflow ---------- -->
+        <article class="card" id="text-overflow">
+          <header class="card-head"><span class="card-tag">typography</span><h3>text-overflow</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Decides how overflowing text is signalled when <code>overflow</code> is hidden and text does not wrap.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip | ellipsis;
+}</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>clip</code> — cut at the edge</li><li><code>ellipsis</code> — show <code>…</code></li><li>Custom string (limited support)</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="to-clip">A very long piece of overflowing sample text</p><figcaption>clip</figcaption></figure>
+              <figure class="demo"><p class="to-ellipsis">A very long piece of overflowing sample text</p><figcaption>ellipsis</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="truncate"&gt;Long text…&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="to-clip">A very long piece of overflowing sample text inside a narrow box.</p><p class="to-ellipsis">A very long piece of overflowing sample text inside a narrow box.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>The "truncate" trio above is the most reusable single-line pattern in CSS.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Requires <code>overflow:hidden</code> + <code>white-space:nowrap</code> to take effect.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>File names, email subjects, table cells, breadcrumbs.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- white-space ---------- -->
+        <article class="card" id="white-space">
+          <header class="card-head"><span class="card-tag">typography</span><h3>white-space</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Controls how whitespace and line breaks inside an element are handled.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { white-space: normal | nowrap | pre | pre-wrap | pre-line; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code> — collapse spaces, wrap</li><li><code>nowrap</code> — never wrap</li><li><code>pre</code> — preserve exactly like <code>&lt;pre&gt;</code></li><li><code>pre-wrap</code> — preserve but still wrap</li><li><code>pre-line</code> — collapse spaces, keep newlines</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ws2-normal">one   two
+three</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="ws2-nowrap">one   two three</p><figcaption>nowrap</figcaption></figure>
+              <figure class="demo"><p class="ws2-pre">one   two
+three</p><figcaption>pre</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="keep"&gt;one   two
+three&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.keep { white-space: pre-wrap; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="ws2-normal">one   two   three   (collapsed to single spaces)</p><p class="ws2-pre">one   two
+three (preserved exactly)</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p><code>pre-wrap</code> is ideal for showing code or poetry without horizontal scroll.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Pair with <code>overflow-wrap</code> to handle very long unbreakable strings.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Code blocks, badges, preserving user formatting.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- word-break ---------- -->
+        <article class="card" id="word-break">
+          <header class="card-head"><span class="card-tag">typography</span><h3>word-break</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Controls whether the browser may break lines <em>inside</em> words to prevent overflow.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { word-break: normal | break-all | keep-all; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code></li><li><code>break-all</code> — break anywhere, even mid-word</li><li><code>keep-all</code> — no breaks for CJK word boundaries</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="wb-normal">SupercalifragilisticexpialidociousWord</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="wb-break">SupercalifragilisticexpialidociousWord</p><figcaption>break-all</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="break"&gt;LongStringNoSpaces&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.break { word-break: break-all; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="wb-normal">SupercalifragilisticexpialidociousWordOverflowing</p><p class="wb-break">SupercalifragilisticexpialidociousWordBreakingMidWord</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Prefer <code>overflow-wrap: break-word</code> first — it only breaks when necessary.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p><code>break-all</code> can split words awkwardly in Latin scripts.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>URLs, long tokens, narrow table columns.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- overflow-wrap ---------- -->
+        <article class="card" id="overflow-wrap">
+          <header class="card-head"><span class="card-tag">typography</span><h3>overflow-wrap</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Allows the browser to break an otherwise unbreakable word only if it would overflow the container.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { overflow-wrap: normal | break-word | anywhere; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code></li><li><code>break-word</code> — break only when needed</li><li><code>anywhere</code> — also affects min-content sizing</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ow-normal">SupercalifragilisticexpialidociousWord</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="ow-break">SupercalifragilisticexpialidociousWord</p><figcaption>break-word</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p class="wrap"&gt;Hippopotomonstrosesquippedaliophobia&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.wrap { overflow-wrap: break-word; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="ow-normal">HippopotomonstrosesquippedaliophobiaLongUnbreakableString</p><p class="ow-break">HippopotomonstrosesquippedaliophobiaLongUnbreakableString</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Formerly called <code>word-wrap</code>; both names still work.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Friendlier than <code>word-break: break-all</code> for normal prose.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>User-generated content, comments, chat messages, URLs.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- vertical-align ---------- -->
+        <article class="card" id="vertical-align">
+          <header class="card-head"><span class="card-tag">typography</span><h3>vertical-align</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Aligns inline (or table-cell) elements vertically relative to their parent or line box.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { vertical-align: baseline | sub | super | top | middle | bottom | &lt;length&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li>Keywords: <code>baseline</code>, <code>top</code>, <code>middle</code>, <code>bottom</code>, <code>text-top</code>, <code>text-bottom</code></li><li><code>sub</code> / <code>super</code></li><li>Length or percentage</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="va-wrap">Text<span class="va-super">super</span></p><figcaption>super</figcaption></figure>
+              <figure class="demo"><p class="va-wrap">Text<span class="va-sub">sub</span></p><figcaption>sub</figcaption></figure>
+              <figure class="demo"><p class="va-wrap">Text<span class="va-top">top</span></p><figcaption>top</figcaption></figure>
+              <figure class="demo"><p class="va-wrap">Text<span class="va-mid">mid</span></p><figcaption>middle</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;p&gt;H&lt;span class="up"&gt;2&lt;/span&gt;O&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.up { vertical-align: super; font-size: .7em; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="va-wrap">Reference line <span class="va-super">super</span> · <span class="va-sub">sub</span> · <span class="va-top">top</span> · <span class="va-mid">middle</span></p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>For block layout use Flexbox/Grid alignment instead — <code>vertical-align</code> only works on inline/table-cell boxes.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Has no effect on block-level elements.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Chemical formulas (H₂O), exponents, aligning icons with text.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- direction ---------- -->
+        <article class="card" id="direction">
+          <header class="card-head"><span class="card-tag">typography</span><h3>direction</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets the base writing direction of text (left-to-right or right-to-left).</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { direction: ltr | rtl; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>ltr</code> — left-to-right (English, default)</li><li><code>rtl</code> — right-to-left (Arabic, Hebrew)</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="dir-ltr">1 · 2 · 3 (LTR)</p><figcaption>ltr</figcaption></figure>
+              <figure class="demo"><p class="dir-rtl">1 · 2 · 3 (RTL)</p><figcaption>rtl</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;html lang="ar" dir="rtl"&gt;…&lt;/html&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>[dir="rtl"] { direction: rtl; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="dir-ltr">This sentence flows left to right.</p><p class="dir-rtl">This sentence flows right to left.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Prefer the HTML <code>dir</code> attribute for accessibility; CSS <code>direction</code> mirrors it.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Also affects column direction in tables and Flexbox main-axis start.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Multilingual sites, Arabic/Hebrew layouts.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- unicode-bidi ---------- -->
+        <article class="card" id="unicode-bidi">
+          <header class="card-head"><span class="card-tag">typography</span><h3>unicode-bidi</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Works with <code>direction</code> to override the default Unicode bidirectional text algorithm for embedded text.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { unicode-bidi: normal | embed | isolate | bidi-override; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>normal</code></li><li><code>embed</code> / <code>bidi-override</code></li><li><code>isolate</code> / <code>isolate-override</code> (recommended)</li><li><code>plaintext</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><p class="ub-normal">مرحبا Hello مرحبا</p><figcaption>normal</figcaption></figure>
+              <figure class="demo"><p class="ub-override">Hello World</p><figcaption>bidi-override rtl</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;bdo dir="rtl"&gt;reversed&lt;/bdo&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.override {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="ub-normal">A mixed sentence مرحبا with embedded RTL text.</p><p class="ub-override">This text has its character order overridden.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Use the HTML <code>&lt;bdi&gt;</code> element for unknown-direction user content — it implies <code>isolate</code>.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>An advanced property; rarely needed outside multilingual contexts.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Mixed-direction UIs, usernames of unknown language.</p></div>
+          </div>
+        </article>
+
+      </section>
+      <!-- ============ END SECTION 1 (sections continue below) ============ -->
+
+      <!-- ============================================================
+           SECTION 2 — LISTS
+           ============================================================ -->
+      <section id="lists" class="page-section" aria-labelledby="lists-title">
+        <header class="section-head">
+          <h2 id="lists-title">2 · Lists</h2>
+          <p class="section-kicker">Markers, position &amp; images for &lt;ul&gt; / &lt;ol&gt;</p>
+        </header>
+
+        <!-- ---------- list-style-type ---------- -->
+        <article class="card" id="list-style-type">
+          <header class="card-head"><span class="card-tag">list</span><h3>list-style-type</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets the marker (bullet or number) shown next to each list item.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { list-style-type: disc | circle | square | decimal | lower-alpha | none; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li>Unordered: <code>disc</code> · <code>circle</code> · <code>square</code></li>
+              <li>Ordered: <code>decimal</code> · <code>lower-alpha</code> · <code>upper-alpha</code> · <code>lower-roman</code> · <code>upper-roman</code></li>
+              <li><code>none</code></li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><ul class="lst-disc"><li>Apple</li><li>Banana</li></ul><figcaption>disc</figcaption></figure>
+              <figure class="demo"><ul class="lst-circle"><li>Apple</li><li>Banana</li></ul><figcaption>circle</figcaption></figure>
+              <figure class="demo"><ul class="lst-square"><li>Apple</li><li>Banana</li></ul><figcaption>square</figcaption></figure>
+              <figure class="demo"><ol class="lst-decimal"><li>Apple</li><li>Banana</li></ol><figcaption>decimal</figcaption></figure>
+              <figure class="demo"><ol class="lst-lalpha"><li>Apple</li><li>Banana</li></ol><figcaption>lower-alpha</figcaption></figure>
+              <figure class="demo"><ol class="lst-ualpha"><li>Apple</li><li>Banana</li></ol><figcaption>upper-alpha</figcaption></figure>
+              <figure class="demo"><ol class="lst-lroman"><li>Apple</li><li>Banana</li></ol><figcaption>lower-roman</figcaption></figure>
+              <figure class="demo"><ol class="lst-uroman"><li>Apple</li><li>Banana</li></ol><figcaption>upper-roman</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;ul class="circle"&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.circle { list-style-type: circle; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><ul class="lst-square"><li>Square bullet item one</li><li>Square bullet item two</li></ul><ol class="lst-uroman"><li>Roman numeral one</li><li>Roman numeral two</li></ol></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Use <code>list-style-type: none</code> before building custom navigation or menus.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Many extended keywords exist (<code>cjk-decimal</code>, <code>georgian</code>, etc.).</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Feature lists, navigation menus, numbered steps.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- list-style-position ---------- -->
+        <article class="card" id="list-style-position">
+          <header class="card-head"><span class="card-tag">list</span><h3>list-style-position</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Decides whether the marker sits <em>inside</em> the list item's box or <em>outside</em> it.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { list-style-position: inside | outside; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>outside</code> (default) — marker hangs in the margin</li><li><code>inside</code> — marker is part of the text flow</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><ul class="lsp-outside"><li>This item has its marker outside the content box.</li></ul><figcaption>outside</figcaption></figure>
+              <figure class="demo"><ul class="lsp-inside"><li>This item has its marker inside the content box.</li></ul><figcaption>inside</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;ul class="in"&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.in { list-style-position: inside; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><ul class="lsp-outside"><li>Marker outside — wrapped lines indent past the bullet.</li></ul><ul class="lsp-inside"><li>Marker inside — wrapped lines align under the bullet.</li></ul></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p><code>inside</code> is handy when list items have background colors.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Default is <code>outside</code>.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Styled bullet badges, tight cards.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- list-style-image ---------- -->
+        <article class="card" id="list-style-image">
+          <header class="card-head"><span class="card-tag">list</span><h3>list-style-image</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Replaces the default marker with an image.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { list-style-image: url("marker.svg") | none; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>url("…")</code> — path to the image</li><li><code>none</code> — fall back to <code>list-style-type</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><ul class="lsi-none"><li>Default bullet</li><li>Default bullet</li></ul><figcaption>none</figcaption></figure>
+              <figure class="demo"><ul class="lsi-img"><li>Image marker</li><li>Image marker</li></ul><figcaption>image (emoji via svg)</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;ul class="custom"&gt;
+  &lt;li&gt;Item&lt;/li&gt;
+&lt;/ul&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.custom { list-style-image: url("star.svg"); }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><ul class="lsi-img"><li>Star marker item one</li><li>Star marker item two</li></ul></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Image markers cannot be sized or recolored — for control use <code>::marker</code> or a background-image hack instead.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>If the image fails, the browser falls back to <code>list-style-type</code>.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Branded bullets, checkmarks, custom icons.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- list-style shorthand ---------- -->
+        <article class="card" id="list-style">
+          <header class="card-head"><span class="card-tag">list</span><h3>list-style (shorthand)</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets <code>list-style-type</code>, <code>list-style-position</code> and <code>list-style-image</code> in one declaration.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { list-style: &lt;type&gt; &lt;position&gt; &lt;image&gt; | none; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li>Any combination, in any order</li><li><code>none</code> resets all three</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><ul class="ls-1"><li>Shorthand one</li><li>Shorthand two</li></ul><figcaption>square inside</figcaption></figure>
+              <figure class="demo"><ul class="ls-2"><li>Shorthand one</li><li>Shorthand two</li></ul><figcaption>none</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;ul class="reset"&gt;…&lt;/ul&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.reset { list-style: none; }
+.sq   { list-style: square inside; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><ul class="ls-1"><li>Square inside, item one.</li><li>Square inside, item two.</li></ul><ul class="ls-2"><li>No marker at all.</li><li>No marker at all.</li></ul></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Order of values does not matter — omitted values reset to defaults.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Shorthand is the recommended way to reset lists for nav.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Navigation resets, one-line list styling.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           SECTION 3 — TABLES
+           ============================================================ -->
+      <section id="tables" class="page-section" aria-labelledby="tables-title">
+        <header class="section-head">
+          <h2 id="tables-title">3 · Tables</h2>
+          <p class="section-kicker">Borders, spacing, captions &amp; layout</p>
+        </header>
+
+        <!-- ---------- border-collapse ---------- -->
+        <article class="card" id="border-collapse">
+          <header class="card-head"><span class="card-tag">table</span><h3>border-collapse</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Decides whether adjacent table cells share a single border or keep their own.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { border-collapse: collapse | separate; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>collapse</code> — one shared border between cells</li><li><code>separate</code> (default) — each cell keeps its own border</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><table class="tbl-collapse">
+                <tr><th>A</th><th>B</th></tr><tr><td>1</td><td>2</td></tr>
+              </table><figcaption>collapse</figcaption></figure>
+              <figure class="demo"><table class="tbl-separate">
+                <tr><th>A</th><th>B</th></tr><tr><td>1</td><td>2</td></tr>
+              </table><figcaption>separate</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;table class="clean"&gt;…&lt;/table&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.clean { border-collapse: collapse; }
+.clean td, .clean th { border: 1px solid #333; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><table class="tbl-collapse demo-table"><thead><tr><th>Name</th><th>Role</th></tr></thead><tbody><tr><td>Aria</td><td>Designer</td></tr><tr><td>Leo</td><td>Engineer</td></tr></tbody></table></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p><code>collapse</code> is the modern default for data tables.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p><code>border-spacing</code> has no effect when collapsed.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Data grids, calendars, comparison tables.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- border-spacing ---------- -->
+        <article class="card" id="border-spacing">
+          <header class="card-head"><span class="card-tag">table</span><h3>border-spacing</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets the distance between cell borders (only when <code>border-collapse: separate</code>).</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { border-spacing: &lt;length&gt; &lt;length&gt;; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li>One length (uniform)</li><li>Two lengths (horizontal &amp; vertical)</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><table class="bs-0">
+                <tr><td>A</td><td>B</td></tr><tr><td>C</td><td>D</td></tr>
+              </table><figcaption>0</figcaption></figure>
+              <figure class="demo"><table class="bs-10">
+                <tr><td>A</td><td>B</td></tr><tr><td>C</td><td>D</td></tr>
+              </table><figcaption>10px</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;table class="gap"&gt;…&lt;/table&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.gap { border-collapse: separate; border-spacing: 10px; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><table class="bs-10 demo-table"><tbody><tr><td>A</td><td>B</td></tr><tr><td>C</td><td>D</td></tr></tbody></table></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Use this to create "card grid" tables without margins.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Ignored under <code>border-collapse: collapse</code>.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Spaced data cells, dashboard widgets.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- caption-side ---------- -->
+        <article class="card" id="caption-side">
+          <header class="card-head"><span class="card-tag">table</span><h3>caption-side</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Positions a table's <code>&lt;caption&gt;</code> above or below the table.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { caption-side: top | bottom; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>top</code> (default)</li><li><code>bottom</code></li><li>Logical: <code>inline-start</code> / <code>inline-end</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><table class="cs-top"><caption>Top caption</caption><tr><td>Cell</td></tr></table><figcaption>top</figcaption></figure>
+              <figure class="demo"><table class="cs-bottom"><caption>Bottom caption</caption><tr><td>Cell</td></tr></table><figcaption>bottom</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;table&gt;
+  &lt;caption&gt;Sales 2026&lt;/caption&gt;
+  …
+&lt;/table&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>caption { caption-side: bottom; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><table class="cs-bottom demo-table"><caption>Sales by quarter (2026)</caption><thead><tr><th>Q1</th><th>Q2</th></tr></thead><tbody><tr><td>120</td><td>180</td></tr></tbody></table></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Style the <code>&lt;caption&gt;</code> itself for nicer titles.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Captions are accessible by default — keep them for screen readers.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Report tables, footnotes under data.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- table-layout ---------- -->
+        <article class="card" id="table-layout">
+          <header class="card-head"><span class="card-tag">table</span><h3>table-layout</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Controls the algorithm the browser uses to lay out table cells.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { table-layout: auto | fixed; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>auto</code> (default) — column widths follow content</li><li><code>fixed</code> — widths follow the first row / explicit widths</li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><table class="tl-auto">
+                <tr><th>Short</th><th>VeryLongColumnHeader</th></tr>
+                <tr><td>1</td><td>2</td></tr>
+              </table><figcaption>auto</figcaption></figure>
+              <figure class="demo"><table class="tl-fixed">
+                <tr><th style="width:50%">Col A</th><th style="width:50%">Col B</th></tr>
+                <tr><td>1</td><td>2</td></tr>
+              </table><figcaption>fixed</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;table class="fixed"&gt;…&lt;/table&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.fixed { table-layout: fixed; width: 100%; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><table class="tl-fixed demo-table"><colgroup><col style="width:25%"><col style="width:75%"></colgroup><thead><tr><th>ID</th><th>Description (forced 75%)</th></tr></thead><tbody><tr><td>001</td><td>Even though this cell has more text, the column stays narrow.</td></tr></tbody></table></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p><code>fixed</code> is faster and more predictable for large tables.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Set a <code>width</code> on the table for <code>fixed</code> to behave.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>UI grids, calendars, predictable report tables.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- empty-cells ---------- -->
+        <article class="card" id="empty-cells">
+          <header class="card-head"><span class="card-tag">table</span><h3>empty-cells</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Decides whether empty cells render their borders/backgrounds (only under <code>separate</code>).</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { empty-cells: show | hide; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list"><li><code>show</code> (default)</li><li><code>hide</code></li></ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><table class="ec-show"><tr><td>X</td><td></td></tr><tr><td></td><td>Y</td></tr></table><figcaption>show</figcaption></figure>
+              <figure class="demo"><table class="ec-hide"><tr><td>X</td><td></td></tr><tr><td></td><td>Y</td></tr></table><figcaption>hide</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;table class="clean"&gt;
+  &lt;tr&gt;&lt;td&gt;X&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.clean { border-collapse: separate; empty-cells: hide; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><table class="ec-hide demo-table"><tbody><tr><td>Filled</td><td></td></tr><tr><td></td><td>Filled</td></tr></tbody></table></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Hide empties for cleaner forms &amp; sparse matrices.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Has no effect when <code>border-collapse: collapse</code>.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Sparse data tables, calendar grids.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           SECTION 4 — DISPLAY
+           ============================================================ -->
+      <section id="display" class="page-section" aria-labelledby="display-title">
+        <header class="section-head">
+          <h2 id="display-title">4 · Display</h2>
+          <p class="section-kicker">How boxes participate in the flow</p>
+        </header>
+
+        <!-- ---------- display overview ---------- -->
+        <article class="card" id="display-overview">
+          <header class="card-head"><span class="card-tag">layout</span><h3>display</h3></header>
+          <p class="card-def"><strong>Definition.</strong> The most important layout property — it decides the <em>box type</em> an element generates and how it flows.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { display: block | inline | inline-block | none | contents | flex | grid; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values covered here</h4>
+            <ul class="value-list">
+              <li><code>block</code> — full width, new line, respects width/height</li>
+              <li><code>inline</code> — flows with text, ignores width/height</li>
+              <li><code>inline-block</code> — flows inline but respects box properties</li>
+              <li><code>none</code> — removed from the flow entirely</li>
+              <li><code>contents</code> — the box itself disappears; children join the parent's flow</li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><div class="d-block">block</div><figcaption>block</figcaption></figure>
+              <figure class="demo"><div class="d-inline-wrap"><span class="d-inline">inline</span><span class="d-inline">inline</span></div><figcaption>inline</figcaption></figure>
+              <figure class="demo"><div class="d-inline-wrap"><span class="d-iblock">inline-block</span><span class="d-iblock">inline-block</span></div><figcaption>inline-block</figcaption></figure>
+              <figure class="demo"><div class="d-none-wrap"><span class="d-none">none</span><span class="d-inline">still here</span></div><figcaption>none</figcaption></figure>
+              <figure class="demo"><div class="d-contents-wrap"><div class="d-contents"><span class="d-inline">joined</span></div><span class="d-inline">flow</span></div><figcaption>contents</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;div class="blk"&gt;block&lt;/div&gt;
+&lt;span class="ib"&gt;inline-block&lt;/span&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.blk { display: block; width: 100%; }
+.ib  { display: inline-block; width: 80px; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render">
+            <div class="d-block">I am a block — I take the full width and start on a new line.</div>
+            <div class="d-inline-wrap"><span class="d-inline">inline</span> · <span class="d-inline">inline</span> · <span class="d-iblock">inline-block</span> · <span class="d-iblock">inline-block</span></div>
+          </div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p><code>display:none</code> removes the element from the accessibility tree too. To hide visually but keep it, use visually-hidden techniques.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p><code>contents</code> had accessibility bugs historically — test before relying on it.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Nav bars (<code>inline-block</code>), showing/hiding (<code>none</code>), buttons that sit inline.</p></div>
+          </div>
+        </article>
+      </section>
+      <!-- ============ END SECTION 4 (sections continue below) ============ -->
+
+      <!-- ============================================================
+           SECTION 5 — POSITION
+           ============================================================ -->
+      <section id="position" class="page-section" aria-labelledby="position-title">
+        <header class="section-head">
+          <h2 id="position-title">5 · Position</h2>
+          <p class="section-kicker">static · relative · absolute · fixed · sticky + offsets &amp; z-index</p>
+        </header>
+
+        <!-- ---------- position overview ---------- -->
+        <article class="card" id="position-overview">
+          <header class="card-head"><span class="card-tag">layout</span><h3>position</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Decides how an element is placed in (or removed from) the normal document flow, and which coordinate system its offsets refer to.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector {
+  position: static | relative | absolute | fixed | sticky;
+  top: &lt;length&gt;; right: &lt;length&gt;;
+  bottom: &lt;length&gt;; left: &lt;length&gt;;
+  z-index: &lt;integer&gt;;
+}</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li><code>static</code> (default) — normal flow, ignores offsets</li>
+              <li><code>relative</code> — offset from its normal position; flow kept</li>
+              <li><code>absolute</code> — removed from flow; positioned vs nearest positioned ancestor</li>
+              <li><code>fixed</code> — positioned vs the viewport (stays on scroll)</li>
+              <li><code>sticky</code> — relative until a threshold, then fixed</li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo pos-demo"><span class="p-static">static</span><figcaption>static</figcaption></figure>
+              <figure class="demo pos-demo"><span class="p-relative">relative</span><figcaption>relative</figcaption></figure>
+              <figure class="demo pos-demo pos-demo-rel"><span class="p-absolute">absolute</span><figcaption>absolute</figcaption></figure>
+              <figure class="demo pos-demo pos-demo-rel"><span class="p-sticky">sticky</span><figcaption>sticky</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;div class="anchor"&gt;
+  &lt;span class="badge"&gt;New&lt;/span&gt;
+&lt;/div&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.anchor { position: relative; }
+.badge { position: absolute; top: -8px; right: -8px; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render pos-render"><div class="pos-stage"><div class="pos-box box-static">static — in flow</div><div class="pos-box box-relative">relative — nudged 10px left &amp; up</div><div class="pos-box box-absolute">absolute — pinned to stage corner</div></div></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Always set <code>position: relative</code> on the parent before using <code>absolute</code> on a child.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p><code>sticky</code> needs a scrolling ancestor and a <code>top</code>/<code>bottom</code> threshold.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Tooltips, badges, modals (<code>fixed</code>), sticky headers.</p></div>
+          </div>
+        </article>
+
+        <!-- ---------- offsets & z-index ---------- -->
+        <article class="card" id="offsets-zindex">
+          <header class="card-head"><span class="card-tag">layout</span><h3>top · right · bottom · left · z-index</h3></header>
+          <p class="card-def"><strong>Definition.</strong> The four offsets move a positioned element along its axes; <code>z-index</code> controls stacking order among positioned siblings.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector {
+  top: 10px; right: 0; bottom: auto; left: 50%;
+  z-index: 5;
+}</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li>Offsets: <code>&lt;length&gt;</code> · <code>%</code> · <code>auto</code></li>
+              <li><code>z-index</code>: integer (negative allowed) or <code>auto</code></li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration (z-index stacking)</h4>
+            <div class="demo-grid">
+              <figure class="demo z-stage"><span class="z z1">z 1</span><span class="z z2">z 2</span><span class="z z3">z 3</span><figcaption>higher z-index on top</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;div class="layer"&gt;1&lt;/div&gt;
+&lt;div class="layer top"&gt;2&lt;/div&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.layer { position: absolute; }
+.top  { z-index: 10; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render z-render"><div class="z-box zb-1">z-index 1</div><div class="z-box zb-2">z-index 2</div><div class="z-box zb-3">z-index 3</div></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Offsets only work on non-static elements. <code>z-index</code> also requires a positioned element.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Each stacking context isolates its children's z-index from the outside.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Modals over content, dropdowns, badges, layered cards.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           SECTION 6 — FLOAT
+           ============================================================ -->
+      <section id="float" class="page-section" aria-labelledby="float-title">
+        <header class="section-head">
+          <h2 id="float-title">6 · Float</h2>
+          <p class="section-kicker">Wrapping text around elements &amp; the clear property</p>
+        </header>
+
+        <article class="card" id="float-overview">
+          <header class="card-head"><span class="card-tag">layout</span><h3>float &amp; clear</h3></header>
+          <p class="card-def"><strong>Definition.</strong> <code>float</code> pulls an element to one side so that inline content wraps around it; <code>clear</code> pushes an element below floated siblings.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { float: left | right | none; }
+selector { clear: left | right | both | none; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li><code>float</code>: <code>left</code> · <code>right</code> · <code>none</code></li>
+              <li><code>clear</code>: <code>left</code> · <code>right</code> · <code>both</code> · <code>none</code></li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo float-stage">
+                <div class="fl fl-left">L</div>
+                <p>Text wraps around the floated box on the right side, filling the space next to it.</p>
+                <figcaption>float: left</figcaption>
+              </figure>
+              <figure class="demo float-stage">
+                <div class="fl fl-right">R</div>
+                <p>Text wraps around the floated box on the left side, filling the space next to it.</p>
+                <figcaption>float: right</figcaption>
+              </figure>
+              <figure class="demo float-stage">
+                <div class="fl fl-left">L</div>
+                <p>Some wrapping text.</p>
+                <div class="clr-both">cleared: both</div>
+                <figcaption>clear: both</figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;img class="wrap" src="pic.jpg"&gt;
+&lt;p&gt;Text wraps around…&lt;/p&gt;
+&lt;p class="after"&gt;Cleared.&lt;/p&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.wrap   { float: left; }
+.after  { clear: both; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render float-render"><div class="fl fl-left">F</div><p>This paragraph flows around the floated box. Notice how the text reflows naturally on the side opposite the float, exactly like a magazine column wrapping a pull-image.</p><div class="clr-both">This element has cleared the float and starts on a new line.</div></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Floats still work great for wrapping text around images. For whole layouts, prefer Flexbox/Grid.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>A floated element is taken out of normal flow, so its parent may collapse — use a clearfix.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Images inside articles, drop caps, magazine layouts.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           SECTION 7 — VISIBILITY
+           ============================================================ -->
+      <section id="visibility" class="page-section" aria-labelledby="visibility-title">
+        <header class="section-head">
+          <h2 id="visibility-title">7 · Visibility</h2>
+          <p class="section-kicker">visible · hidden · opacity — the three ways to "hide" an element</p>
+        </header>
+
+        <article class="card" id="visibility-overview">
+          <header class="card-head"><span class="card-tag">layout</span><h3>visibility &amp; opacity</h3></header>
+          <p class="card-def"><strong>Definition.</strong> <code>visibility:hidden</code> hides an element but keeps its space; <code>opacity:0</code> makes it fully transparent (still interactive); <code>display:none</code> removes it entirely.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector {
+  visibility: visible | hidden | collapse;
+  opacity: 0;   /* 0 to 1 */
+}</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li><code>visibility</code>: <code>visible</code> · <code>hidden</code> · <code>collapse</code></li>
+              <li><code>opacity</code>: <code>0</code>–<code>1</code> (decimals allowed)</li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration</h4>
+            <div class="demo-grid">
+              <figure class="demo"><div class="vis vis-visible">Visible</div><figcaption>visible</figcaption></figure>
+              <figure class="demo"><div class="vis vis-hidden-wrap"><span class="vis-hidden">Hidden</span></div><figcaption>hidden (space kept)</figcaption></figure>
+              <figure class="demo"><div class="vis vis-opacity"><span>Transparent</span></div><figcaption>opacity: 0</figcaption></figure>
+              <figure class="demo"><div class="vis vis-none-wrap"><span class="vis-none">Gone</span></div><figcaption>display: none (no space)</figcaption></figure>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;div class="secret"&gt;Hidden&lt;/div&gt;
+&lt;div class="ghost"&gt;Faded&lt;/div&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.secret { visibility: hidden; }
+.ghost  { opacity: 0; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render vis-render"><div class="vis-row"><div class="vis-box vb-visible">visible</div><div class="vis-box vb-hidden">hidden</div><div class="vis-box vb-opacity">opacity 0</div><div class="vis-box vb-none">none</div></div><p class="vis-caption">Notice "hidden" still occupies space, "opacity 0" keeps space &amp; clicks, "none" leaves no trace.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>For fade-in/out animations use <code>opacity</code> + <code>transition</code>; <code>visibility</code> is not smoothly animatable.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p><code>opacity:0</code> elements are still focusable &amp; clickable — combine with <code>visibility:hidden</code> to disable them.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Modals, tooltips, image rollovers, print-only content.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ============================================================
+           SECTION 8 — CURSOR
+           ============================================================ -->
+      <section id="cursor" class="page-section" aria-labelledby="cursor-title">
+        <header class="section-head">
+          <h2 id="cursor-title">8 · Cursor</h2>
+          <p class="section-kicker">Hover each box to see the cursor change</p>
+        </header>
+
+        <article class="card" id="cursor-overview">
+          <header class="card-head"><span class="card-tag">ux</span><h3>cursor</h3></header>
+          <p class="card-def"><strong>Definition.</strong> Sets the mouse pointer shown when hovering over an element — an important cue for how it can be interacted with.</p>
+          <div class="card-block"><h4>Syntax</h4><pre class="code"><code>selector { cursor: pointer | default | text | move | grab | crosshair | wait | not-allowed | help | zoom-in | zoom-out; }</code></pre></div>
+          <div class="card-block">
+            <h4>Accepted values</h4>
+            <ul class="value-list">
+              <li><code>pointer</code> · <code>default</code> · <code>text</code></li>
+              <li><code>move</code> · <code>grab</code> · <code>grabbing</code></li>
+              <li><code>crosshair</code> · <code>wait</code> · <code>not-allowed</code> · <code>help</code></li>
+              <li><code>zoom-in</code> · <code>zoom-out</code></li>
+              <li>Custom: <code>url("c.cur"), auto</code></li>
+            </ul>
+          </div>
+          <div class="card-block">
+            <h4>Visual demonstration — hover each box</h4>
+            <div class="cursor-grid">
+              <div class="cur cur-pointer">pointer</div>
+              <div class="cur cur-default">default</div>
+              <div class="cur cur-text">text</div>
+              <div class="cur cur-move">move</div>
+              <div class="cur cur-grab">grab</div>
+              <div class="cur cur-crosshair">crosshair</div>
+              <div class="cur cur-wait">wait</div>
+              <div class="cur cur-notallowed">not-allowed</div>
+              <div class="cur cur-help">help</div>
+              <div class="cur cur-zoomin">zoom-in</div>
+              <div class="cur cur-zoomout">zoom-out</div>
+            </div>
+          </div>
+          <div class="card-code">
+            <div class="code-col"><h5>HTML</h5><pre class="code"><code>&lt;button class="btn"&gt;Click&lt;/button&gt;
+&lt;span class="drag"&gt;⋮⋮&lt;/span&gt;</code></pre></div>
+            <div class="code-col"><h5>CSS</h5><pre class="code"><code>.btn  { cursor: pointer; }
+.drag { cursor: grab; }</code></pre></div>
+          </div>
+          <div class="card-block"><h4>Rendered output</h4><div class="render"><p class="cur-note">Hover the grid above — each box applies the named cursor. The right cursor signals affordance before the user clicks.</p></div></div>
+          <div class="card-notes">
+            <div><span class="note-tag tip">💡 Tips</span><p>Use <code>cursor: pointer</code> on clickable non-button elements, <code>not-allowed</code> on disabled controls.</p></div>
+            <div><span class="note-tag note">🌐 Browser notes</span><p>Exact cursor glyph varies by OS; the keyword meaning stays the same.</p></div>
+            <div><span class="note-tag use">✅ Common use cases</span><p>Links &amp; buttons (pointer), drag handles (grab), disabled (not-allowed), help icons (help).</p></div>
+          </div>
+        </article>
+      </section>
+
+    </main>
+  </div>
+  <!-- ============ END LAYOUT SHELL ============ -->
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">Aa</span>
+        <div>
+          <strong>CSS Typography &amp; Layout Explorer</strong>
+          <p>An educational reference built with pure HTML5 &amp; CSS3 — no frameworks, no JavaScript, no dependencies.</p>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#typography">Typography</a>
+        <a href="#lists">Lists</a>
+        <a href="#tables">Tables</a>
+        <a href="#display">Display</a>
+        <a href="#position">Position</a>
+        <a href="#float">Float</a>
+        <a href="#visibility">Visibility</a>
+        <a href="#cursor">Cursor</a>
+      </nav>
+
+      <div class="footer-meta">
+        <p>Made for CSS Learners · Open <code>index.html</code> in any browser.</p>
+        <p class="copy">© 2026 CSS Typography &amp; Layout Explorer. For learning purposes.</p>
+      </div>
+
+      <a href="#top" class="back-to-top">↑ Back to top</a>
+    </div>
+  </footer>
+
+</body>
+</html>
+
